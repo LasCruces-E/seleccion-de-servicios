@@ -48,7 +48,7 @@ class FoodSeeder extends Seeder
             'costo'=>'20',
             'descripcion'=>'De guisos variados',
             'reservacion'=>1,
-            'imagen'=>'/img/GorditasAzucar.jpg',
+            'imagen'=>'/img/Platillo_2.jpg',
         ]);
 
         DB::table('food')->insert([

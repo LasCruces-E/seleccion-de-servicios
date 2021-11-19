@@ -54,10 +54,36 @@
                 <img src="img/senderismo.jpeg" class="img-fluid" alt="test">
             </div> 
         </div>
-    <div class="container  bg-light mt-5 justify-content-center">
+    <div class="container  bg-light mt-5 justify-content-center mb-5">
         <div class="embed-responsive embed-responsive-16by9">
             <iframe width="100%" height="600" src="https://www.youtube.com/embed/aiV1j1PMWT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
     </div>
     </div>
+
+    <section id="footer">
+      <div class="w-100 bg-brown pt-5 pb-5">
+        <div class="row row-cols-md-3 d-flex justify-content-center">
+          <div class="col-sm-3 m-auto d-flex flex-column align-items-center">
+            <img src="img/logo.png" alt="" class="w-25 h-50">
+          </div>
+          <div class="col-sm-3 d-flex flex-column align-items-center">
+            <h3 class="mb-3">Contacto</h3>
+            <ul class="list-group d-flex align-items-center">
+              <li class="list-group mb-2">ecoturismodenaturaleza@gmail.com</li>
+              <li class="list-group mb-2">4443196619</li>
+              <li class="list-group mb-2"><a href="FAQ.php" class="text-white text-decoration-none">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3 d-flex flex-column align-items-center">
+            <h3 class="mb-3">Redes sociales</h3>
+            <ul class="list-group d-flex align-items-center">
+              <li class="list-group mb-2"><a href="https://www.facebook.com/Ecoturismo-Las-Cruces-113553307075098/?modal=admin_todo_tour" class="text-white text-decoration-none"> <i class="fab fa-facebook-square"></i> Ecoturismo Las Cruces</a> </li>
+              <li class="list-group mb-2"><a href="https://www.instagram.com/ecoturismolascruces/?hl=en" class="text-white text-decoration-none"> <i class="fab fa-instagram-square"></i> ecoturismolascruces</a></li>
+              <li class="list-group mb-2"><a href="https://www.instagram.com/ecoturismolascruces/?hl=en" class="text-white text-decoration-none"> <i class="fab fa-twitter-square"></i> Las Cruces</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 @endsection

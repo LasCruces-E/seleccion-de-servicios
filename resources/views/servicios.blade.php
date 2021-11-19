@@ -44,94 +44,66 @@
               </div>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-3" id="servicios-list">
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/J_tradicionales.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Juegos tradicionales</h5>
-                    <p class="card-text">Trompo, yoyo, canicas y balero</p>
-                    <p class="fw-bold">Gratis</p>
+              @foreach($servicios as $s)
+                <div class="col">
+                  <div class="card h-100 shadow rounded">
+                    <img src="{{ asset($s->imagen)}}" class="card-img-top " alt="...">
+                    <div class="card-body text-center">
+                      <div class="d-flex justify-content-around align-items-baseline">
+                        <h5 class="card-title text-orange fw-bold mb-4">{{$s->nombre}}</h5>
+                      </div>
+                      <p class="card-text">{{$s->descripcion}}</p>
+                      <p class="fw-bold">${{$s->costo}}.00</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/Columpios.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Columpio</h5>
-                    <p class="fw-bold">Gratis</p>
-                  </div>
-                </div>
-              </div>
+              @endforeach
             </div>
+
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-3" id="servicios-reservacion-list">
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/Caballo.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Paseo a caballo</h5>
-                    <p class="card-text"></p>
-                    <p class="fw-bold">$200.00 por hora</p>
+              @foreach($servicios as $s)
+                @if($s->reservacion == 1)
+                  <div class="col">
+                    <div class="card h-100 shadow rounded">
+                      <img src="{{ asset($s->imagen)}}" class="card-img-top " alt="...">
+                      <div class="card-body text-center">
+                        <div class="d-flex justify-content-around align-items-baseline">
+                          <h5 class="card-title text-orange fw-bold mb-4">{{$s->nombre}}</h5>
+                        </div>
+                        <p class="card-text">{{$s->descripcion}}</p>
+                        <p class="fw-bold">${{$s->costo}}.00</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/Caminata.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Caminata guiada (2km, 4km, y 5km)</h5>
-                    <p class="fw-bold">$20.00 por persona en grupos minimo de 10 (Gratis sin guía)</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/zona_acampar.jpeg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Espacio para acampar</h5>
-                    <p class="card-text">Casa de campaña propia</p>
-                    <p class="fw-bold">$150.00 por noche y por tienda de campaña</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/mesas.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Espacio para eventos</h5>
-                    <p class="card-text">Incluye cocina, espacio techado con mobiliario rústico para 80 personas, baños secos, agua y vigilancia</p>
-                    <p class="fw-bold">$3000.00 por jornada de 10 horas</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/cuatrimoto.jpeg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Cuatrimoto</h5>
-                    <p class="fw-bold">$200.00 por hora</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/Bicicleta.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Bicicleta</h5>
-                    <p class="fw-bold">$50.00 por hora</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 shadow rounded">
-                  <img src="img/Lena_1.jpg" class="card-img-top " alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title text-orange fw-bold mb-4">Leña para fogata</h5>
-                    <p class="fw-bold">$10.00 por kilo</p>
-                  </div>
-                </div>
-              </div>
+                @endif 
+              @endforeach
             </div>
         </div>
+    </section>
+
+    <section id="footer">
+      <div class="w-100 bg-brown pt-5 pb-5">
+        <div class="row row-cols-md-3 d-flex justify-content-center">
+          <div class="col-sm-3 m-auto d-flex flex-column align-items-center">
+            <img src="img/logo.png" alt="" class="w-25 h-50">
+          </div>
+          <div class="col-sm-3 d-flex flex-column align-items-center">
+            <h3 class="mb-3">Contacto</h3>
+            <ul class="list-group d-flex align-items-center">
+              <li class="list-group mb-2">ecoturismodenaturaleza@gmail.com</li>
+              <li class="list-group mb-2">4443196619</li>
+              <li class="list-group mb-2"><a href="FAQ.php" class="text-white text-decoration-none">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3 d-flex flex-column align-items-center">
+            <h3 class="mb-3">Redes sociales</h3>
+            <ul class="list-group d-flex align-items-center">
+              <li class="list-group mb-2"><a href="https://www.facebook.com/Ecoturismo-Las-Cruces-113553307075098/?modal=admin_todo_tour" class="text-white text-decoration-none"> <i class="fab fa-facebook-square"></i> Ecoturismo Las Cruces</a> </li>
+              <li class="list-group mb-2"><a href="https://www.instagram.com/ecoturismolascruces/?hl=en" class="text-white text-decoration-none"> <i class="fab fa-instagram-square"></i> ecoturismolascruces</a></li>
+              <li class="list-group mb-2"><a href="https://www.instagram.com/ecoturismolascruces/?hl=en" class="text-white text-decoration-none"> <i class="fab fa-twitter-square"></i> Las Cruces</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 @endsection

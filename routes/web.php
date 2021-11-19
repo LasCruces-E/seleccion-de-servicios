@@ -31,9 +31,7 @@ Route::get('/galeria', function () {
 
 Route::get('/comida', 'FoodController@comida');
 
-Route::get('/servicios', function () {
-    return view('servicios');
-});
+Route::get('/servicios', 'ServicesController@servicios');
 
 Route::get('/recomendaciones_y_compromisos', function () {
     return view('recomendaciones_y_compromisos');
@@ -46,6 +44,8 @@ Route::get('/FAQ', function () {
 Route::get('/acerca_de', function () {
     return view('acerca_de');
 });
+
+Route::get('/reservar', 'ReservationController@reservacion');
 
 Route::get('/contacto', 'ContactController@contacto');
 

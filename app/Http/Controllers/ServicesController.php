@@ -9,7 +9,8 @@ class ServicesController extends Controller
 {
     public function servicios()
     {
-        return view('servicios');
+        $servicios = Service::all();
+        return view('servicios')->with('servicios',$servicios);
     }
 
     public function agregarServicio()

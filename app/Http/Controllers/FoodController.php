@@ -9,7 +9,8 @@ class FoodController extends Controller
 {
     public function comida()
     {
-        return view('comida');
+        $productos = Product::all();
+        return view('comida')->with('productos',$productos);
     }
 
     public function agregarComida(){
